@@ -10,6 +10,7 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+pkg/*
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
@@ -32,3 +33,6 @@ bower.json
 
 # Ruby Mine
 .idea
+
+# RBenv
+.ruby-version
