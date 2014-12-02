@@ -66,7 +66,7 @@ You will find the log file in:
     log/customlogger.html
 
 
-## Running Test
+## Running Test On Gem (Not Rails App)
 
     bundle exec rake spec
 
