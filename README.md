@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-Custom Logger is very easy to use.
+Custom Logger is very easy to use. Just use the module 'CustomLogger' anywhere
+and log the message in a nice view friendly coloful html page. Take a look
+at the examples below.
+
+![Example Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/all.png)
 
 #### Log error
 
@@ -30,7 +34,7 @@ Custom Logger is very easy to use.
     CustomLogger.error = 'This is an error message'
     CustomLogger.error 'This is an error message', 'Error Title'
 
-![Error ScreenShot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/all.png)
+![Error Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/error.png)
 
 #### Log warning
 
@@ -38,11 +42,15 @@ Custom Logger is very easy to use.
     CustomLogger.warning = 'This is an warning message'
     CustomLogger.warning 'This is an warning message', 'Warning Title'
 
+![Warning Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/warning.png)
+
 #### Log debug
 
     CustomLogger.debug 'This is an debug message'
     CustomLogger.debug = 'This is an debug message'
     CustomLogger.debug 'This is an debug message', 'Debug Title'
+
+![Debug Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/debug.png)
 
 #### Log info
 
@@ -50,11 +58,15 @@ Custom Logger is very easy to use.
     CustomLogger.info = 'This is an info message'
     CustomLogger.info 'This is an info message', 'Info Title'
 
+![Info Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/info.png)
+
 #### Log raw
 
     CustomLogger.raw 'This is an raw message'
     CustomLogger.raw = 'This is an raw message'
     CustomLogger.raw 'This is an raw message', 'Raw Title'
+
+![Raw Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/raw.png)
 
 #### Clear All Logs
 
