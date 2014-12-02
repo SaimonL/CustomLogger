@@ -30,6 +30,8 @@ Custom Logger is very easy to use.
     CustomLogger.error = 'This is an error message'
     CustomLogger.error 'This is an error message', 'Error Title'
 
+![Error ScreenShot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/all.png)
+
 #### Log warning
 
     CustomLogger.warning 'This is an warning message'
