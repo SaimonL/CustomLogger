@@ -120,6 +120,7 @@ module CustomLogger
 
       def new_log_file
         file_path_name = [ path, file ].join('/')
+        system "mkdir -p #{path}"
         File.open(file_path_name, 'w') { |file| file.write(html) }
       end
 
