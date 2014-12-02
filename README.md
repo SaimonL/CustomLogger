@@ -62,6 +62,10 @@ at the examples below.
 
 #### Log raw
 
+Keep in mind that raw means that no formatting is applied so if the output
+is 1000 characters horizontal without any line break then that is what you
+will see. Basically it is inside of a 'pre' html tag.
+
     CustomLogger.raw 'This is an raw message'
     CustomLogger.raw = 'This is an raw message'
     CustomLogger.raw 'This is an raw message', 'Raw Title'
