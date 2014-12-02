@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "customlogger"
   spec.version       = Customlogger::VERSION
   spec.authors       = ["Saimon Lovell"]
-  spec.email         = ["staysynchronize@gmai.com"]
+  spec.email         = ["staysynchronize@gmail.com"]
   spec.summary       = %q{Log output in to a seperate html file.}
   spec.description   = %q{Have you ever wished that you could debug an output to a html nicely colored page? Now you can.}
   spec.homepage      = "https://github.com/SaimonL/CustomLogger"
