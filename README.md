@@ -65,6 +65,11 @@ You will find the log file in:
 
     log/customlogger.html
 
+
+## Running Test
+
+    bundle exec rake spec
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/customlogger/fork )
