@@ -1,8 +1,13 @@
-# Custom Logger 1.0.0
+# Custom Logger 0.0.2
 
 Custom logger allows you to log you're debug infmration to an html file so you can
 view them in much more easier way. This is my first gem so expect things not
 to be perfect.
+
+## Compatable
+
+CustomLogger is compatable with Ruby 1.9 and above. As for Rails 3.x and up.
+You should not be using or have Ruby 1.8 installed for obvious reasons.
 
 ## Installation
 
