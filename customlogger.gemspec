@@ -9,7 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Saimon Lovell"]
   spec.email         = ["staysynchronize@gmail.com"]
   spec.summary       = %q{Log output in to a seperate html file.}
-  spec.description   = %q{Have you ever wished that you could debug an output to a html nicely colored page? Now you can.}
+  spec.description   = %q{Have you ever wished that you could debug an output to a html nicely colored page? Now you can log all you need in to a nice html format colored page.
+                          For more information please visit: https://github.com/SaimonL/CustomLogger}
   spec.homepage      = "https://github.com/SaimonL/CustomLogger"
   spec.license       = "MIT"
 
