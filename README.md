@@ -14,7 +14,11 @@ You should not be using or have Ruby 1.8 installed for obvious reasons.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'customlogger'
+group :development, :test do
+  [...]
+  gem 'customlogger'
+  [...]
+end
 ```
 
 And then execute:
