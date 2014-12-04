@@ -119,6 +119,14 @@ module CustomLogger
       end
 
       def log(state, message, title = nil)
+        if !title.nil? && !title.is_a?(String)
+          title = title.inspect
+        end
+
+        unless %w(Array Hash String).include?(message.class.name)
+          message = message.inspect
+        end
+
         if @logged_total.nil?
           @logged_total = 0
         else
