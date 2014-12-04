@@ -3,13 +3,13 @@
 [![Gem Version](https://badge.fury.io/rb/customlogger.png)](http://badge.fury.io/rb/customlogger)
 [![Build Status](https://travis-ci.org/SaimonL/CustomLogger.svg)](https://travis-ci.org/SaimonL/CustomLogger)
 
-Custom logger allows you to log you're debug infmration to an html file so you can
-view them in much more easier way. This is my first gem so expect things not
-to be perfect.
+Custom logger allows you to log you're debug information to an html file so you can
+view them in much more easier way. All you need to do is include the gem in the
+Gemfile and then use it directly CustomLogger.
 
 ## Compatable
 
-CustomLogger is compatable with Ruby 1.9 and above. As for Rails 3.x and up.
+CustomLogger is compatible with Ruby 1.9 and above. As for Rails 3.x and up.
 You should not be using or have Ruby 1.8 installed for obvious reasons.
 
 ## Installation
@@ -36,7 +36,7 @@ Or install it yourself as:
 ## Usage
 
 Custom Logger is very easy to use. Just use the module 'CustomLogger' anywhere
-and log the message in a nice view friendly coloful html page. Take a look
+and log the message in a nice friendly colorful html page view. Take a look
 at the examples below.
 
 ![Example Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/all.png)
@@ -96,7 +96,7 @@ looking for.
 
 #### Clear All Logs
 
-    customlogger.clear
+    CustomLogger.clear
 
 ## Log File
 
