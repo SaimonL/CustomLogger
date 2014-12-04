@@ -78,8 +78,12 @@ describe 'with Custom Logger' do
       allow(CustomLogger).to receive(:log).and_return(true)
     end
 
+    it 'will return new line html code when new line is called' do
+      expect(CustomLogger.new_line).to eq '<section><hr></section>'
+    end
+
     describe 'with title' do
-      it 'will return logged error' do
+      it 'will return logged error' do'<section><hr></section>'
         expect(CustomLogger.error('ss saimon', 'my title')).to eq 'ss saimon'
       end
 
@@ -115,7 +119,7 @@ describe 'with Custom Logger' do
     end
   end
 
-  describe 'with loggin error file' do
+  describe 'with loggin file' do
     before(:all) do
       CustomLogger.path = Dir.pwd
       CustomLogger.file = 'delete-me.html'
@@ -196,6 +200,17 @@ describe 'with Custom Logger' do
 
       it 'will add error title to the html file' do
         expect(@data).to include '<header>hello abc</header>'
+      end
+    end
+
+    describe 'with new_line' do
+      before(:all) do
+        CustomLogger.new_line
+        @data = read_file(@file_location)
+      end
+
+      it 'will add a section' do
+        expect(@data).to include '<section><hr></section>'
       end
     end
 

@@ -3,6 +3,7 @@ require 'customlogger/html_template'
 
 module CustomLogger
   LOOP_LIMIT = 512
+  SECTION_HTML = '<section><hr></section>'
 
   class << self
     def path=(value)
@@ -98,6 +99,11 @@ module CustomLogger
       value
     end
 
+    def new_line
+      log(:section, nil, nil)
+      SECTION_HTML
+    end
+
     private
       def set_error_colors
         @error_colors = {
@@ -135,6 +141,8 @@ module CustomLogger
         case state
           when :raw
             HTMLTemplate.raw_to_html(message, title)
+          when :section
+            SECTION_HTML
           else
             HTMLTemplate.log_to_html(state, message, title)
         end
