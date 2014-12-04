@@ -107,7 +107,7 @@ module CustomLogger
     private
       def set_error_colors
         @error_colors = {
-          error: '#8b0000',  warning: '#ffe9c4',
+          error: '#8b0000',  warning: '#6d422e',
           debug: '#2d5a2e',  info: '#31708f'
         }
       end
