@@ -37,9 +37,9 @@ class HTMLTemplate
         font-size: 0.9em;
         color: #{error_colors[:warning]};
         background-color: #fcf8e3;
-        border-color: #faebcc;
+        border-color: #b4a48a;
         padding: 8px;
-        border: 1px solid #faebcc;
+        border: 1px solid #b4a48a;
         border-radius: 4px;
         margin-bottom: 4px;
       }
