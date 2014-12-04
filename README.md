@@ -85,10 +85,18 @@ will see. Basically it is inside of a 'pre' html tag.
 
 ![Raw Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/raw.png)
 
+#### New Line
+
+If you want to add a gap in-between sets of outputs then this is what you are
+looking for.
+
+    CustomLogger.new_line
+
+![New Line](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/new_line.png)
+
 #### Clear All Logs
 
     customlogger.clear
-
 
 ## Log File
 
