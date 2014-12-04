@@ -51,17 +51,17 @@ at the examples below.
 
 #### Log warning
 
-    CustomLogger.warning 'This is an warning message'
-    CustomLogger.warning = 'This is an warning message'
-    CustomLogger.warning 'This is an warning message', 'Warning Title'
+    CustomLogger.warning 'This is a warning message'
+    CustomLogger.warning = 'This is a warning message'
+    CustomLogger.warning 'This is a warning message', 'Warning Title'
 
 ![Warning Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/warning.png)
 
 #### Log debug
 
-    CustomLogger.debug 'This is an debug message'
-    CustomLogger.debug = 'This is an debug message'
-    CustomLogger.debug 'This is an debug message', 'Debug Title'
+    CustomLogger.debug 'This is a debug message'
+    CustomLogger.debug = 'This is a debug message'
+    CustomLogger.debug 'This is a debug message', 'Debug Title'
 
 ![Debug Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/debug.png)
 
@@ -79,9 +79,9 @@ Keep in mind that raw means that no formatting is applied so if the output
 is 1000 characters horizontal without any line break then that is what you
 will see. Basically it is inside of a 'pre' html tag.
 
-    CustomLogger.raw 'This is an raw message'
-    CustomLogger.raw = 'This is an raw message'
-    CustomLogger.raw 'This is an raw message', 'Raw Title'
+    CustomLogger.raw 'This is a raw message'
+    CustomLogger.raw = 'This is a raw message'
+    CustomLogger.raw 'This is a raw message', 'Raw Title'
 
 ![Raw Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/raw.png)
 
