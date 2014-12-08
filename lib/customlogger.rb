@@ -124,7 +124,11 @@ module CustomLogger
         end
 
         unless %w(Array Hash String).include?(message.class.name)
-          message = message.inspect
+          if message.is_a?(ActiveRecord::Base)
+            message = message.to_json
+          else
+            message = message.inspect
+          end
         end
 
         if @logged_total.nil?
