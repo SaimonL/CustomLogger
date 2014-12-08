@@ -1,3 +1,4 @@
+require 'json'
 require 'customlogger/version'
 require 'customlogger/html_template'
 
@@ -125,7 +126,8 @@ module CustomLogger
 
         unless %w(Array Hash String).include?(message.class.name)
           if message.is_a?(ActiveRecord::Base)
-            message = message.to_json
+            message = JSON.pretty_generate(message.as_json)
+            message = message.gsub!(/\n/,'<br>')
           else
             message = message.inspect
           end
