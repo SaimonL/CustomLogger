@@ -105,6 +105,7 @@ module CustomLogger
       SECTION_HTML
     end
 
+
     private
       def set_error_colors
         @error_colors = {
@@ -125,11 +126,15 @@ module CustomLogger
         end
 
         unless %w(Array Hash String).include?(message.class.name)
-          if message.is_a?(ActiveRecord::Base)
-            message = JSON.pretty_generate(message.as_json)
-            message = message.gsub!(/\n/,'<br>')
-          else
+          if defined?(Module::ActiveRecord).nil?
             message = message.inspect
+          else
+            if message.is_a?(ActiveRecord::Base)
+              message = JSON.pretty_generate(message.as_json)
+              message = message.gsub!(/\n/,'<br>')
+            else
+              message = message.inspect
+            end
           end
         end
 
