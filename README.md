@@ -23,7 +23,7 @@ group :development, :test do
   [...]
 end
 ```
-Keep in mind that "[...]" means that there may or may not have other gems there.
+Keep in mind that "[...]" means that there may or may not be other gems there.
 
 And then execute:
 
