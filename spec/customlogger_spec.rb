@@ -38,22 +38,22 @@ describe 'with Custom Logger' do
   describe 'with error colors' do
     it 'will have default error colors' do
       expect( CustomLogger.error_colors
-        ).to eq ({ error: '#8b0000', warning: '#6d422e', debug: '#2d5a2e',
-                   info: '#31708f' })
+        ).to eq ({ error: '#8b0000', warning: '#6d422e', debug: '#ececec',
+                   info: '#285b75' })
     end
 
     it 'will allow to set error color' do
       CustomLogger.error_color(:error, 'lovell')
       expect( CustomLogger.error_colors
-      ).to eq ({ error: 'lovell', warning: '#6d422e', debug: '#2d5a2e',
-                 info: '#31708f' })
+      ).to eq ({ error: 'lovell', warning: '#6d422e', debug: '#ececec',
+                 info: '#285b75' })
     end
 
     it 'will allow to set warning color' do
       CustomLogger.error_color(:warning, 'slovell')
       expect( CustomLogger.error_colors
-      ).to eq ({ error: 'lovell', warning: 'slovell', debug: '#2d5a2e',
-                 info: '#31708f' })
+      ).to eq ({ error: 'lovell', warning: 'slovell', debug: '#ececec',
+                 info: '#285b75' })
     end
 
     it 'will allow to set debug color' do
@@ -61,7 +61,7 @@ describe 'with Custom Logger' do
       expect( CustomLogger.error_colors
 
       ).to eq ({ error: 'lovell', warning: 'slovell', debug: 'saimon',
-                 info: '#31708f' })
+                 info: '#285b75' })
     end
 
     it 'will allow to set debug color' do

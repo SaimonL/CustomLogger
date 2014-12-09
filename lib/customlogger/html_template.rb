@@ -36,7 +36,7 @@ class HTMLTemplate
         font-family: monospace, monospace, serif;
         font-size: 0.9em;
         color: #{error_colors[:warning]};
-        background-color: #faebcc;
+        background-color: #ffeedc;
         border-color: #b4a48a;
         padding: 8px;
         border: 1px solid #b4a48a;
@@ -60,7 +60,7 @@ class HTMLTemplate
         font-family: monospace, monospace, serif;
         font-size: 0.9em;
         color: #{error_colors[:debug]};
-        background-color: #eafbe2;
+        background-color: #f8fbe2;
         border-color: #bbcbad;
         padding: 8px;
         border: 1px solid #bbcbad;

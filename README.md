@@ -37,7 +37,7 @@ Or install it yourself as:
 
 Custom Logger is very easy to use. Just use the module 'CustomLogger' anywhere
 and log the message in a nice friendly colorful html page view. All the logging
-follows pattern of message input first, followed by optional title. Take a look
+follows pattern of message input first followed by optional title. Take a look
 at the examples below.
 
 ![Example Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/all.png)
