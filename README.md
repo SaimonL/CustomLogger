@@ -85,6 +85,15 @@ will see. Basically it is inside of a 'pre' html tag.
 
 ![Raw Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/raw.png)
 
+#### ActiveRecord Support
+
+CustomLogger supports ActiveRecord if you use ActiveRecord. To log ActiveRecord
+just use raw logger. For an example:
+
+    CustomLogger.raw User.first, 'This is User.first'
+
+![ActiveRecord Log](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/active_record.png)
+
 #### New Line
 
 If you want to add a gap in-between sets of outputs then this is what you are
