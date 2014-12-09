@@ -46,6 +46,7 @@ at the examples below.
     CustomLogger.error 'This is an error message'
     CustomLogger.error = 'This is an error message'
     CustomLogger.error 'This is an error message', 'Error Title'
+    CustomLogger.error('This is an error message', 'Error Title')
 
 ![Error Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/error.png)
 
@@ -54,6 +55,7 @@ at the examples below.
     CustomLogger.warning 'This is a warning message'
     CustomLogger.warning = 'This is a warning message'
     CustomLogger.warning 'This is a warning message', 'Warning Title'
+    CustomLogger.warning('This is a warning message', 'Warning Title')
 
 ![Warning Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/warning.png)
 
@@ -62,6 +64,7 @@ at the examples below.
     CustomLogger.debug 'This is a debug message'
     CustomLogger.debug = 'This is a debug message'
     CustomLogger.debug 'This is a debug message', 'Debug Title'
+    CustomLogger.debug('This is a debug message', 'Debug Title')
 
 ![Debug Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/debug.png)
 
@@ -70,6 +73,7 @@ at the examples below.
     CustomLogger.info 'This is an info message'
     CustomLogger.info = 'This is an info message'
     CustomLogger.info 'This is an info message', 'Info Title'
+    CustomLogger.info('This is an info message', 'Info Title')
 
 ![Info Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/info.png)
 
@@ -82,6 +86,7 @@ will see. Basically it is inside of a 'pre' html tag.
     CustomLogger.raw 'This is a raw message'
     CustomLogger.raw = 'This is a raw message'
     CustomLogger.raw 'This is a raw message', 'Raw Title'
+    CustomLogger.raw('This is a raw message', 'Raw Title')
 
 ![Raw Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/raw.png)
 
@@ -90,7 +95,7 @@ will see. Basically it is inside of a 'pre' html tag.
 CustomLogger supports ActiveRecord if you use ActiveRecord. To log ActiveRecord
 just use raw logger. For an example:
 
-    CustomLogger.raw User.first, 'This is User.first'
+    CustomLogger.raw(User.first, 'This is User.first')
 
 ![ActiveRecord Log](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/active_record.png)
 
