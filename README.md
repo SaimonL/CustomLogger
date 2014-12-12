@@ -45,8 +45,6 @@ at the examples below.
 #### Log error
 
     CustomLogger.error 'This is an error message'
-    CustomLogger.error = 'This is an error message'
-    CustomLogger.error 'This is an error message', 'Error Title'
     CustomLogger.error('This is an error message', 'Error Title')
 
 ![Error Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/error.png)
@@ -54,8 +52,6 @@ at the examples below.
 #### Log warning
 
     CustomLogger.warning 'This is a warning message'
-    CustomLogger.warning = 'This is a warning message'
-    CustomLogger.warning 'This is a warning message', 'Warning Title'
     CustomLogger.warning('This is a warning message', 'Warning Title')
 
 ![Warning Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/warning.png)
@@ -63,8 +59,6 @@ at the examples below.
 #### Log debug
 
     CustomLogger.debug 'This is a debug message'
-    CustomLogger.debug = 'This is a debug message'
-    CustomLogger.debug 'This is a debug message', 'Debug Title'
     CustomLogger.debug('This is a debug message', 'Debug Title')
 
 ![Debug Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/debug.png)
@@ -72,8 +66,6 @@ at the examples below.
 #### Log info
 
     CustomLogger.info 'This is an info message'
-    CustomLogger.info = 'This is an info message'
-    CustomLogger.info 'This is an info message', 'Info Title'
     CustomLogger.info('This is an info message', 'Info Title')
 
 ![Info Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/info.png)
@@ -85,8 +77,6 @@ is 1000 characters horizontal without any line break then that is what you
 will see. Basically it is inside of a 'pre' html tag.
 
     CustomLogger.raw 'This is a raw message'
-    CustomLogger.raw = 'This is a raw message'
-    CustomLogger.raw 'This is a raw message', 'Raw Title'
     CustomLogger.raw('This is a raw message', 'Raw Title')
 
 ![Raw Screenshot](https://raw.githubusercontent.com/SaimonL/repo-assets/master/customlogger/raw.png)
@@ -111,13 +101,23 @@ looking for.
 
 #### Clear All Logs
 
+To clear all logs that are there in the html file
+
     CustomLogger.clear
 
+To auto clear all logs on EACH log
+
+    CustomLogger.auto_clear = true
+
+To disable auto clear all logs on EACH log (default)
+
+    CustomLogger.auto_clear = true
+    
 ## Log File
 
 You will find the log file in:
 
-    log/customlogger.html
+    log/custom_logger.html
 
 
 ## Running Test On Gem (Not Rails App)

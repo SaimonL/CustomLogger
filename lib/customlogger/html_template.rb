@@ -60,7 +60,7 @@ class HTMLTemplate
         font-family: monospace, monospace, serif;
         font-size: 0.9em;
         color: #{error_colors[:debug]};
-        background-color: #f8fbe2;
+        background-color: #efffe2;
         border-color: #bbcbad;
         padding: 8px;
         border: 1px solid #bbcbad;
@@ -108,7 +108,7 @@ class HTMLTemplate
         font-family: monospace, monospace, serif;
         font-size: 0.9em;
         color: #303030;
-        background-color: #dcdcdc;
+        background-color: #f7f7f7;
         border-color: #a0a0a0;
         padding: 8px;
         border: 1px solid #a0a0a0;
@@ -132,7 +132,7 @@ class HTMLTemplate
     </style>
   </head>
   <body>
-  <h2>Custome Logger</h2>
+  <h2>Custom Logger</h2>
   </body></html>
       HTML
     end

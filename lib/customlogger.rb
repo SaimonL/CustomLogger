@@ -2,9 +2,23 @@ require 'json'
 require 'customlogger/version'
 require 'customlogger/html_template'
 
+
 module CustomLogger
-  LOOP_LIMIT = 512
+  LOOP_LIMIT = 2048
   SECTION_HTML = '<section><hr></section>'
+
+  @log_path = [ Dir.pwd, '/log' ].join
+  @file_name = 'custom_logger.html'
+
+  @title = 'Custom Logger'
+  @error_colors = {
+    error: '#8b0000',  warning: '#5e3927',
+    debug: '#004000',  info: '#1b3d4f'
+  }
+
+  @auto_clear = false
+
+  @logged_total = 0
 
   class << self
     def path=(value)
@@ -12,7 +26,11 @@ module CustomLogger
     end
 
     def path
-      @log_path||=[ Dir.pwd, '/log' ].join
+      if @log_path.nil? || @log_path == ''
+        [ Dir.pwd, '/log' ].join
+      else
+        @log_path
+      end
     end
 
     def file=(value)
@@ -20,7 +38,11 @@ module CustomLogger
     end
 
     def file
-      @file_name||='CustomLogger.html'
+      if @file_name.nil? || @file_name == ''
+        'custom_logger.html' 
+      else
+        @file_name
+      end
     end
 
     def title=(value)
@@ -28,16 +50,15 @@ module CustomLogger
     end
 
     def title
-      @title||='Custome Logger'
+      @title
     end
 
     def error_color(state, color)
-      set_error_colors if @error_colors.nil?
       @error_colors[state] = color
     end
 
     def error_colors
-      @error_colors||=set_error_colors
+      @error_colors
     end
 
     def new
@@ -50,52 +71,40 @@ module CustomLogger
       'Wiped All Old Logs'
     end
 
-    def error=(value)
-      log(:error, value)
-      value
+    def auto_clear=(value)
+      @auto_clear = value
+    end
+
+    def auto_clear
+      @auto_clear
     end
 
     def error(value, title=nil)
+      clear if @auto_clear
       log(:error, value, title)
       value
     end
 
-    def warning=(value)
-      log(:warning, value)
-      value
-    end
-
     def warning(value, title=nil)
+      clear if @auto_clear
       log(:warning, value, title)
       value
     end
 
-    def debug=(value)
-      log(:debug, value)
-      value
-    end
-
     def debug(value, title=nil)
+      clear if @auto_clear
       log(:debug, value, title)
       value
     end
 
-    def info=(value)
-      log(:info, value)
-      value
-    end
-
     def info(value, title=nil)
+      clear if @auto_clear
       log(:info, value, title)
       value
     end
 
-    def raw=(value)
-      log(:raw, value)
-      value
-    end
-
     def raw(value, title=nil)
+      clear if @auto_clear
       log(:raw, value, title)
       value
     end
@@ -105,15 +114,17 @@ module CustomLogger
       SECTION_HTML
     end
 
+    def demo
+      clear
+      error 'This is an error message...', 'Error'
+      warning 'This is a warning message...', 'Warning'
+      info 'This is an info message...', 'Info'
+      debug 'This is an debug message...', 'Debug'
+      raw 'This is an raw message...', 'Raw'
+      [ 'Demo complete for file: ', file ].join
+    end
 
     private
-      def set_error_colors
-        @error_colors = {
-          error: '#8b0000',  warning: '#6d422e',
-          debug: '#ececec',  info: '#285b75'
-        }
-      end
-
       def new_log_file
         file_path_name = [ path, file ].join('/')
         system "mkdir -p #{path}"
@@ -121,10 +132,27 @@ module CustomLogger
       end
 
       def log(state, message, title = nil)
+        title = format_title(title)
+        message = format_message(message)
+
+        abort('Infinite loop possibility!!') if @logged_total > LOOP_LIMIT
+
+        file_path_name = [ path, file ].join('/')
+        new_log_file unless File.exist?(file_path_name)
+
+        written_logs = build_log(file_path_name, state, message, title)
+        File.open(file_path_name, 'w') { |file| file.write(written_logs) }
+        @logged_total += 1
+      end
+
+      def format_title(title)
         if !title.nil? && !title.is_a?(String)
           title = title.inspect
         end
+        title
+      end
 
+      def format_message(message)
         unless %w(Array Hash String).include?(message.class.name)
           if defined?(Module::ActiveRecord).nil?
             message = message.inspect
@@ -132,28 +160,10 @@ module CustomLogger
             if message.is_a?(ActiveRecord::Base)
               message = JSON.pretty_generate(message.as_json)
               message = message.gsub!(/\n/,'<br>')
-            else
-              message = message.inspect
             end
           end
         end
-
-        if @logged_total.nil?
-          @logged_total = 0
-        else
-          abort('Infinite loop possibility!!') if @logged_total > LOOP_LIMIT
-        end
-
-        file_path_name = [ path, file ].join('/')
-        new_log_file unless File.exist?(file_path_name)
-
-        written_logs = File.read(file_path_name)
-        written_logs = written_logs[0..-15].to_s
-        written_logs = written_logs[0...-1] if written_logs[-1] == '<'
-        written_logs.concat(to_html(state, message, title))
-        written_logs.concat('</body></html>')
-        File.open(file_path_name, 'w') { |file| file.write(written_logs) }
-        @logged_total += 1
+        message
       end
 
       def to_html(state, message, title)
@@ -165,6 +175,14 @@ module CustomLogger
           else
             HTMLTemplate.log_to_html(state, message, title)
         end
+      end
+
+      def build_log(file_path_name, state, message, title)
+        written_logs = File.read(file_path_name)
+        written_logs = written_logs[0..-15].to_s
+        written_logs = written_logs[0...-1] if written_logs[-1] == '<'
+        written_logs.concat(to_html(state, message, title))
+        written_logs.concat('</body></html>')
       end
 
       def html
