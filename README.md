@@ -111,8 +111,8 @@ To auto clear all logs on EACH log
 
 To disable auto clear all logs on EACH log (default)
 
-    CustomLogger.auto_clear = true
-    
+    CustomLogger.auto_clear = false
+
 ## Log File
 
 You will find the log file in:
