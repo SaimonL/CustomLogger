@@ -8,4 +8,10 @@ end
 
 RSpec.configure do |config|
   config.include Helper
+
+  config.after(:suite) do
+    if File.directory?([ Dir.pwd, 'log'].join('/'))
+      FileUtils.rm_rf([ Dir.pwd, 'log'].join('/'))
+    end
+  end
 end
