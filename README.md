@@ -2,6 +2,8 @@
 
 [![Gem Version](https://badge.fury.io/rb/customlogger.png)](http://badge.fury.io/rb/customlogger)
 [![Build Status](https://travis-ci.org/SaimonL/CustomLogger.svg)](https://travis-ci.org/SaimonL/CustomLogger)
+[![Dependency Status](https://gemnasium.com/SaimonL/CustomLogger.svg)](https://gemnasium.com/SaimonL/CustomLogger)
+
 
 Custom logger allows you to log you're debug information to an html file so you can
 view them in much more easier way. All you need to do is include the gem in the
